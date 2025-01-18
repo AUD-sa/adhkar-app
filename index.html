@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع الأذكار</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- بقية الكود JavaScript و HTML كما هو مع بعض التعديلات الطفيفة في العناصر -->
+    <div id="home-page">
+        <header>
+             <!-- Theme Toggle Button (Moved here for visibility)-->
+               <button class="theme-toggle" onclick="toggleTheme()">
+                   <i class="fas fa-adjust"></i>
+             </button>
+            <h1>موقع الأذكار</h1>
+        </header>
+        <div class="container">
+            <div class="overall-progress">
+                <h3>التقدم الكلي</h3>
+                <div class="progress-item">
+                    <span>أذكار الصباح:</span>
+                    <div class="progress-bar-overall">
+                        <div class="progress-bar-fill-overall" id="morning-overall-progress"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span>أذكار المساء:</span>
+                    <div class="progress-bar-overall">
+                        <div class="progress-bar-fill-overall" id="evening-overall-progress"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="openDhikr('morning')"><i class="fas fa-sun"></i> أذكار الصباح</button>
+            <button class="btn" onclick="openDhikr('evening')"><i class="fas fa-moon"></i> أذكار المساء</button>
+        </div>
+        <footer>
+            <p>لاتنسونا من صالح دعواتكم</p>
+        </footer>
+    </div>
+
+    <!-- صفحة أذكار الصباح -->
+     <div id="morning-page" class="dhikr-page" style="display: none;">
+        <header>
+            <!-- Sidebar Toggle Button -->
+               <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                 <button class="theme-toggle" onclick="toggleTheme()">
+                     <i class="fas fa-adjust"></i>
+                  </button>
+            <h1>أذكار الصباح</h1>
+        </header>
+         <div class="container">
+              <div class="progress-bar">
+               <div class="progress-bar-fill" id="morning-progress-bar-fill"></div>
+            </div>
+            <div class="dhikr-text-container">
+             <p class="dhikr-number" id="morning-dhikr-number"></p>
+                <p class="dhikr-text" id="morning-dhikr-text"></p>
+             </div>
+            <p class="counter" id="morning-counter"></p>
+            <button class="count-btn" id="morning-count-btn" onclick="countOrNextDhikr('morning')">اضغط للعد</button>
+
+            <button class="btn back-btn" id="morning-back-btn" onclick="previousDhikr('morning')">رجوع</button>
+        </div>
+        <footer>
+            <p>لاتنسونا من صالح دعواتكم</p>
+        </footer>
+    </div>
+
+    <!-- صفحة أذكار المساء -->
+      <div id="evening-page" class="dhikr-page" style="display: none;">
+        <header>
+                 <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                   <button class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-adjust"></i>
+            </button>
+            <h1>أذكار المساء</h1>
+        </header>
+        <div class="container">
+           <div class="progress-bar">
+             <div class="progress-bar-fill" id="evening-progress-bar-fill"></div>
+            </div>
+              <div class="dhikr-text-container">
+               <p class="dhikr-number" id="evening-dhikr-number"></p>
+                 <p class="dhikr-text" id="evening-dhikr-text"></p>
+               </div>
+            <p class="counter" id="evening-counter"></p>
+             <button class="count-btn" id="evening-count-btn" onclick="countOrNextDhikr('evening')">اضغط للعد</button>
+            <button class="btn back-btn" id="evening-back-btn" onclick="previousDhikr('evening')">رجوع</button>
+        </div>
+        <footer>
+            <p>لاتنسونا من صالح دعواتكم</p>
+        </footer>
+    </div>
+
+    <button class="home-btn" onclick="goBack()"><i class="fas fa-home"></i></button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h3>قائمة الأذكار</h3>
+        <ul id="dhikr-list"></ul>
+        <!-- Social media links + suggestion links -->
+        <ul>
+        <li><a href="https://www.instagram.com/8WIFL/" target="_blank" rel="noopener noreferrer">  <i class="fab fa-instagram"></i> انستغرام</a></li>
+         <li><a href="https://twitter.com/8WIFL" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> تويتر</a></li>
+             <li><a href="#" ><i class="fas fa-question-circle"></i>  للاقتراحات والاستفسارات </a></li>
+            </ul>
+        </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
